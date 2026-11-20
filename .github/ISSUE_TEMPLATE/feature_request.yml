@@ -1,0 +1,39 @@
+name: Предложение изменения
+description: Предложить новую проверку, новую среду поддержки или изменение документации
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Не публикуйте пароли, ключи и содержимое /etc/shadow. Об уязвимостях сообщайте закрыто: см. SECURITY.md.
+  - type: input
+    id: version
+    attributes:
+      label: Версия
+      description: Вывод `bash securelinux-audit.sh --version`, строка VERSION
+      placeholder: "1.0.x"
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: ОС и вариант установки
+      placeholder: "Ubuntu 24.04 сервер, минимальная установка"
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Что предлагается
+      description: Какая проверка или текст документации нужны и зачем
+    validations:
+      required: true
+  - type: textarea
+    id: reference
+    attributes:
+      label: Источник требования
+      description: Документ ФСТЭК, пункт или ссылка, на которые опирается предложение, если есть
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Что уже пробовали или какие есть варианты
